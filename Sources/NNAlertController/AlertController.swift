@@ -9,7 +9,7 @@ import UIKit
 import SwiftEntryKit
 
 open class AlertController: NSObject {
-    class func showAlertViewWith(_ target: UIViewController,
+    open class func showAlertViewWith(_ target: UIViewController,
                                  title: String,
                                  message: String,
                                  leftBtnTitle: String = "取消",
@@ -27,7 +27,7 @@ open class AlertController: NSObject {
         target.present(alertVc, animated: true)
     }
     
-    class func nn_CustomViewWith(_ onViewController: UIViewController,
+    open class func nn_CustomViewWith(_ onViewController: UIViewController,
                                        title: String? = nil,
                                        content: String,
                                        contentAttribute: NSMutableAttributedString? = nil,
@@ -39,11 +39,11 @@ open class AlertController: NSObject {
         SwiftEntryKit.display(entry: viewController, using: style)
     }
     
-    class func dismiss(){
+    open class func dismiss(){
         SwiftEntryKit.dismiss()
     }
     
-    class func layoutConstraint(superView: UIView,
+    open class func layoutConstraint(superView: UIView,
                                 targetView: UIView,
                                 leadingAnchor: CGFloat,
                                 trailingAnchor: CGFloat,
@@ -58,7 +58,7 @@ open class AlertController: NSObject {
         ])
     }
     
-    class func layoutConstraint(targetView: UIView,
+    open class func layoutConstraint(targetView: UIView,
                                 width: CGFloat,
                                 height: CGFloat){
         targetView.translatesAutoresizingMaskIntoConstraints = false

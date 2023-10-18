@@ -22,7 +22,7 @@ open class AlertContentVC: UIViewController {
         print("\(#file)" + "\(#function)")
     }
     
-    convenience init(_ title: String? = nil, content: String, contentAttribute: NSMutableAttributedString? = nil, leftTitle: String? = "取消", rightTitle: String = "确定", completion: ((Bool)->())?) {
+    public convenience init(_ title: String? = nil, content: String, contentAttribute: NSMutableAttributedString? = nil, leftTitle: String? = "取消", rightTitle: String = "确定", completion: ((Bool)->())?) {
         self.init()
         self.titleText = title
         self.contentText = content

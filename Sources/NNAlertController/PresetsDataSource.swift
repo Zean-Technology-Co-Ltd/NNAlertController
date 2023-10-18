@@ -15,7 +15,7 @@ public struct PresetsDataSource {
         return PresetsDataSource.displayMode
     }
     
-    static func centerPresetsStyle(_ windowLevel: EKAttributes.WindowLevel = .normal,
+    public static func centerPresetsStyle(_ windowLevel: EKAttributes.WindowLevel = .normal,
                                    entryInteraction: EKAttributes.UserInteraction = .dismiss) -> EKAttributes{
         var attributes: EKAttributes
         attributes = .centerFloat
@@ -69,7 +69,7 @@ public struct PresetsDataSource {
         return attributes
     }
     
-    static func bottomPresetsStyle(action: (()->())?) -> EKAttributes{
+    public static func bottomPresetsStyle(action: (()->())?) -> EKAttributes{
         var attributes: EKAttributes
         attributes = .bottomFloat
         attributes.windowLevel = .normal
