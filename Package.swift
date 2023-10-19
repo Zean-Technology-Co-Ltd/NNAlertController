@@ -16,7 +16,6 @@ let package = Package(
         // Dependencies declare other packages that this package depends on.
         // .package(url: /* package url */, from: "1.0.0"),
         .package(url: "https://github.com/huri000/SwiftEntryKit", from: "2.0.0"),
-        .package(url: "https://github.com/Zean-Technology-Co-Ltd/NNKitEx.git", from: "1.0.0"),
         .package(url: "https://github.com/SnapKit/SnapKit.git", .upToNextMajor(from: "5.0.1"))
     ],
     targets: [
@@ -26,7 +25,6 @@ let package = Package(
             name: "NNAlertController",
             dependencies: [
                 "SwiftEntryKit",
-                "NNKitEx",
                 "SnapKit"
               ]),
         .testTarget(

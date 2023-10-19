@@ -1,33 +1,6 @@
 {
   "pins" : [
     {
-      "identity" : "nnkitex",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/Zean-Technology-Co-Ltd/NNKitEx.git",
-      "state" : {
-        "revision" : "92befc0df0a10addfe45890c8a5483142e09d43a",
-        "version" : "1.0.1"
-      }
-    },
-    {
-      "identity" : "rxswift",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/ReactiveX/RxSwift.git",
-      "state" : {
-        "revision" : "9dcaa4b333db437b0fbfaf453fad29069044a8b4",
-        "version" : "6.6.0"
-      }
-    },
-    {
-      "identity" : "sdwebimage",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/SDWebImage/SDWebImage.git",
-      "state" : {
-        "revision" : "1f06ef5007b6a580b3873ed2adee19e05d3b215a",
-        "version" : "5.18.3"
-      }
-    },
-    {
       "identity" : "snapkit",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/SnapKit/SnapKit.git",

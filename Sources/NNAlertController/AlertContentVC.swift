@@ -7,7 +7,6 @@
 
 import UIKit
 import SwiftEntryKit
-import NNKitEx
 import SnapKit
 
 open class AlertContentVC: UIViewController {
@@ -34,7 +33,7 @@ open class AlertContentVC: UIViewController {
     
     open override func viewDidLoad() {
         super.viewDidLoad()
-        self.preferredContentSize = CGSize(width: UIScreen.screenWidth, height:UIScreen.screenHeight)
+        self.preferredContentSize = CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
         self.view.backgroundColor = .clear
         nn_initViews()
         nn_addLayoutSubviews()
@@ -42,16 +41,13 @@ open class AlertContentVC: UIViewController {
     }
     
     private func nn_initViews() {
-        
-        self.view.addSubviews([
-            containterView,
-            titleLabel,
-            subtitleLabel,
-            verLineView,
-            horLineView,
-            leftBtn,
-            rightBtn
-        ])
+        self.view.addSubview(containterView)
+        self.view.addSubview(titleLabel)
+        self.view.addSubview(subtitleLabel)
+        self.view.addSubview(verLineView)
+        self.view.addSubview(horLineView)
+        self.view.addSubview(leftBtn)
+        self.view.addSubview(rightBtn)
     }
     
     private func nn_initDatas() {
@@ -100,7 +96,7 @@ open class AlertContentVC: UIViewController {
             make.height.equalTo(1)
         }
         
-        let btn_w = UIScreen.screenWidth * 0.5 - 54.rpx()
+        let btn_w = UIScreen.main.bounds.width * 0.5 - 54.rpx()
         leftBtn.snp.makeConstraints { (make) in
             make.top.equalTo(horLineView.snp.bottom).offset(0)
             make.left.equalTo(54.rpx())
@@ -165,18 +161,23 @@ open class AlertContentVC: UIViewController {
     private lazy var containterView: UIView = {
         let view = UIView()
         view.backgroundColor = .white
-        view.cornerRadius = 10
+        view.layer.cornerRadius = 10
+        view.layer.masksToBounds = true
         return view
     }()
     
     private lazy var titleLabel: UILabel = {
-        let label = UILabel(font: .medium(16), textColor: UIColor(hex: "#1A1A1A"))
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 16, weight: .medium)
+        label.textColor = UIColor.c1A1A1A
         label.textAlignment = .center
         return label
     }()
     
     private lazy var subtitleLabel: UILabel = {
-        let label = UILabel(font: .regular(14), textColor: UIColor(hex: "#262626").alpha(0.3))
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 14, weight: .regular)
+        label.textColor = UIColor(red: 38, green: 38, blue: 38, alpha: 1).withAlphaComponent(0.3)
         label.textAlignment = .center
         label.numberOfLines = 0
         return label
@@ -195,22 +196,40 @@ open class AlertContentVC: UIViewController {
     }()
     
     private lazy var leftBtn: UIButton = {
-        let btn = UIButton(title: "-", textColor: UIColor(hex: "#1A1A1A"), font: .regular(14), target: self, action: #selector(didClickLeftBtnAction))
+        let btn = UIButton()
+        btn.setTitle("-", for: .normal)
+        btn.titleLabel?.textColor = .c1A1A1A
+        btn.titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .regular)
+        btn.addTarget(self, action: #selector(didClickLeftBtnAction), for: .touchUpInside)
         return btn
     }()
     
     private lazy var rightBtn: UIButton = {
-        let btn = UIButton(title: "-", textColor: .themeColor, font: .medium(14), target: self, action: #selector(didClickRightBtnAction))
+        let btn = UIButton()
+        btn.setTitle("-", for: .normal)
+        btn.titleLabel?.textColor = .themeColor
+        btn.titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .medium)
+        btn.addTarget(self, action: #selector(didClickRightBtnAction), for: .touchUpInside)
         return btn
     }()
 }
 
 extension UIColor {
     class var separatorColor: UIColor {
-        return UIColor(hex: "#F5F5F5")
+        return UIColor(red: 245, green: 245, blue: 245, alpha: 1)
     }
     
     class var themeColor: UIColor {
-        return UIColor(hex: "#1578FF")
+        return UIColor(red: 21, green: 120, blue: 255, alpha: 1)
+    }
+    
+    class var c1A1A1A: UIColor {
+        return UIColor(red: 26, green: 26, blue: 26, alpha: 1)
+    }
+}
+private let iphone6Width: CGFloat = 390
+extension Int{
+    public func rpx() -> CGFloat {
+        return CGFloat(self)*(UIScreen.main.bounds.width / iphone6Width)
     }
 }

@@ -63,8 +63,8 @@ public struct PresetsDataSource {
             )
         )
         attributes.positionConstraints.size = .init(
-            width: .constant(value: UIScreen.screenWidth),
-            height: .constant(value: UIScreen.screenHeight)
+            width: .constant(value: UIScreen.main.bounds.width),
+            height: .constant(value: UIScreen.main.bounds.height)
         )
         return attributes
     }
@@ -107,8 +107,8 @@ public struct PresetsDataSource {
         attributes.positionConstraints.safeArea = .overridden
  
         attributes.positionConstraints.size = .init(
-            width: .constant(value: UIScreen.screenWidth),
-            height: .constant(value: UIScreen.screenHeight)
+            width: .constant(value: UIScreen.main.bounds.width),
+            height: .constant(value: UIScreen.main.bounds.height)
         )
         
         return attributes
