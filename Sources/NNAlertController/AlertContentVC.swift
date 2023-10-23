@@ -177,7 +177,7 @@ open class AlertContentVC: UIViewController {
     private lazy var subtitleLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 14, weight: .regular)
-        label.textColor = UIColor(red: 38, green: 38, blue: 38, alpha: 1).withAlphaComponent(0.3)
+        label.textColor = UIColor(red: 38/255, green: 38/255, blue: 38/255, alpha: 1).withAlphaComponent(0.3)
         label.textAlignment = .center
         label.numberOfLines = 0
         return label
@@ -216,15 +216,15 @@ open class AlertContentVC: UIViewController {
 
 extension UIColor {
     class var separatorColor: UIColor {
-        return UIColor(red: 245, green: 245, blue: 245, alpha: 1)
+        return UIColor(red: 245/255, green: 245/255, blue: 245/255, alpha: 1)
     }
     
     class var themeColor: UIColor {
-        return UIColor(red: 21, green: 120, blue: 255, alpha: 1)
+        return UIColor(red: 21/255, green: 120/255, blue: 255/255, alpha: 1)
     }
     
     class var c1A1A1A: UIColor {
-        return UIColor(red: 26, green: 26, blue: 26, alpha: 1)
+        return UIColor(red: 26/255, green: 26/255, blue: 26/255, alpha: 1)
     }
 }
 private let iphone6Width: CGFloat = 390
