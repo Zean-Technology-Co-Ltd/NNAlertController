@@ -4,4 +4,4 @@ Note: Instructions below are for using SwiftPM without the Xcode UI. It's the ea
 
 To integrate using Apple's Swift package manager, without Xcode integration, add the following as a dependency to your Package.swift:
 
-.package(url: "https://github.com/Moya/Moya.git", .upToNextMajor(from: "1.0.4"))
+```.package(url: "[https://github.com/Moya/Moya.git](https://github.com/Zean-Technology-Co-Ltd/NNAlertController.git)https://github.com/Zean-Technology-Co-Ltd/NNAlertController.git", .upToNextMajor(from: "1.0.4"))```
