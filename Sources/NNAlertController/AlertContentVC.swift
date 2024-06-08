@@ -198,7 +198,7 @@ open class AlertContentVC: UIViewController {
     private lazy var leftBtn: UIButton = {
         let btn = UIButton()
         btn.setTitle("-", for: .normal)
-        btn .setTitleColor(.c1A1A1A, for: .normal)
+        btn.setTitleColor(.c1A1A1A, for: .normal)
         btn.titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .regular)
         btn.addTarget(self, action: #selector(didClickLeftBtnAction), for: .touchUpInside)
         return btn
@@ -207,7 +207,7 @@ open class AlertContentVC: UIViewController {
     private lazy var rightBtn: UIButton = {
         let btn = UIButton()
         btn.setTitle("-", for: .normal)
-        btn .setTitleColor(.themeColor, for: .normal)
+        btn.setTitleColor(.themeColor, for: .normal)
         btn.titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .medium)
         btn.addTarget(self, action: #selector(didClickRightBtnAction), for: .touchUpInside)
         return btn
